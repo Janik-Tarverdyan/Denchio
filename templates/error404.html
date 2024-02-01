@@ -1,0 +1,22 @@
+{% extends "includes/base.html" %}
+{% load static %}
+{% block style %}
+     <link rel="stylesheet" href="{% static 'css/login.css' %}">
+     <link rel="stylesheet" href="{% static 'css/index-media.css' %}">
+{% endblock %}
+{% block title %}Dench.io | Error 404{% endblock %}
+
+{% block main%}       
+    <section class="page my-container">
+        <span class="page-title"><a href="{% url 'index' %}">Home</a></span> <i class="fas fa-angle-right mr-2"></i> Error 404
+    </section>
+    <section class="my-5 text-center my-container" >
+
+        <h1 class="text-gold display-2">Error 404</h1>
+        <h5 class="text-light">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h5>
+        <h1 class="text-gold">error Oops, This Page Could Not Be Found!</h1>
+        
+    </section>
+
+
+{% endblock main%}

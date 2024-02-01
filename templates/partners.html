@@ -1,0 +1,48 @@
+% extends "includes/base.html" %}
+{% load static %}
+{% block style %}
+     <link rel="stylesheet" href="{% static 'css/login.css' %}">
+     <link rel="stylesheet" href="{% static 'css/index-media.css' %}">
+{% endblock %}
+{% block title %}Dench.io | Partners{% endblock %}
+
+{% block main%}       
+    <section class="page my-container">
+        <span class="page-title"><a href="{% url 'index' %}">Home</a></span> <i class="fas fa-angle-right mr-2"></i> Partners
+    </section>
+    <section class="my-5 text-center my-container" >
+
+        {% comment %} <h1 class="text-gold display-2">Error 404</h1>
+        <h5 class="text-light">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h5> {% endcomment %}
+        <div class="mb-4">
+        <h3 class="text-gold">CARROSSERIE RAPIDE 16, Auto body shop in Agris</h3>
+        <h5 class="text-light">France La Riouze, 16110 Rivières, +33781962795</h5>
+        </div>
+        <div class="mb-4">
+        <h3 class="text-gold">GM GROUP, Auto parts</h3>
+        <h5 class="text-light">Armenia Yerevan, Babajanyan 133, +37443444447</h5>
+        </div>
+        <div class="mb-4">
+        <h3 class="text-gold">A&N EXPRESS LLC, Meneger Alex</h3>
+        <h5 class="text-light">USA Sherman oaks CA 91403, 4533 Van Nuys BLVD unit #101, +19093341416 </h5>
+        </div>
+        <div class="mb-4">
+        <h3 class="text-gold">NEW ERA CARGO SHIPPING LLC</h3>
+        <h5 class="text-light">UAE Dubai, The Greens Emaar Business Park Building 4, +971545337470</h5>
+        </div>
+        <div class="mb-4">
+        <h3 class="text-gold">HISSHO TRADING</h3>
+        <h5 class="text-light">Japan 370-3333, 352 Takahamamachi Takasaki Shi Gunma Ken</h5>
+        </div>
+        <div class="mb-4">
+        <h3 class="text-gold">MR K TRANSPORTATION</h3>
+        <h5 class="text-light">27444 Camden Apt. 15M Mission Viejo, CA 92692 (323)708-5858</h5>
+        </div>
+        <div class="mb-4">
+        <h3 class="text-gold">PE VAHAGN GEGHAMYAN</h3>
+        <h5 class="text-light">Armenia Yerevan, Ayvazovskiy 68, +37491101068</h5>
+        </div>
+    </section>
+
+
+{% endblock main%}

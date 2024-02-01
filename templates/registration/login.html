@@ -1,0 +1,61 @@
+{% extends "includes/base.html" %}
+{% load static %}
+{% block style %}
+     <link rel="stylesheet" href="{% static 'css/login.css' %}">
+     <link rel="stylesheet" href="{% static 'css/index-media.css' %}">
+{% endblock %}
+{% block title %}Dench.io | Login{% endblock %}
+
+{% block main%}
+    {% comment %} <section class="page">
+        <span class="page-title"><a href="{% url 'index' %}">Home</a></span> <i class="fas fa-angle-right mr-2"></i> Login
+    </section> {% endcomment %}
+    <hr style="color: #2424242; margin: 0">
+    <section class="login-section">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="login-section-card">
+            <div class="row">
+                <div class="text-center">
+                    <div class="log_reg_btns">
+                        <a href="{% url 'login' %}">
+                            <div class="login_btn mr-sm-3 mr-0 active-btn">
+                                Login
+                            </div>
+                        </a>
+                        <a href="{% url 'register' %}">
+                            <div class="login_btn mt-sm-0 mt-3">
+                                Register
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <form action="{% url 'login' %}" class="col-12" method='POST'>
+                    {% csrf_token %}
+                    <label for="email" class="form-label mt-2">Username or email address <span class="text-gold">*</span></label>
+                    <input type="text" value="{{ form_email }}" class="form-control email-input" id="email" name="email" required>
+
+                    <label for="password" class="form-label mt-2">Password <span class="text-gold">*</span></label>
+                    <input type="password" class="form-control email-input" id="password" name="password" required>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3 flex-sm-row flex-column">
+                        <div class="form-check d-inline-block">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label m-0" for="gridCheck">
+                              <span class="ml-2">Remember me</span>
+                            </label>
+                        </div>
+                        <a href="{% url 'reset_password' %}" class="policy-link">Lost your password?</a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="Login-btn d-inline-block m-0">Submit</button>
+                    </div>
+                    {% if errors %} <div class="error-message mt-2">{{ errors }}</div> {% endif %}
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+{% endblock main%}
+

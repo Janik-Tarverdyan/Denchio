@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+{% comment %} <p>Ողջույն {{ user.first_name }},</body></p> {% endcomment %}
+<p>Please go to <a href="{{ protocol }}://{{ domain }}{% url 'activate' uidb64=uid token=token %}">this link</a> to activate your account,</p>
+<p>{{ protocol }}://{{ domain }}{% url 'activate' uidb64=uid token=token %}</p>
+<p>If you think you are not, ignore this email․</p>
+<br>
+</body>
+</html>

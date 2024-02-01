@@ -1,0 +1,30 @@
+{% extends "includes/base.html" %}
+{% load static %}
+{% block style %}
+     <link rel="stylesheet" href="{% static 'css/login.css' %}">
+     <link rel="stylesheet" href="{% static 'css/account.css' %}">
+     <link rel="stylesheet" href="{% static 'css/index-media.css' %}">
+{% endblock %}
+{% block title %}Dench.io | Dashboard{% endblock %}
+
+{% block main%}      
+        <section class="page my-container">
+            <span class="page-title"><a href="{% url 'index' %}">Home</a></span> <i class="fas fa-angle-right mr-2"></i> Dashboard
+        </section>
+    <div class="my-container">
+        <div class="row">
+            
+            {% include "includes/my-account-menu.html" %}
+
+            <div class="col-md-8 col-12 mb-md-0 mb-3">
+                <div class="ml-2 mt-5 text-white">
+                    <h6>Welcome {{ request.user.email }} (not {{ request.user.email }}? <a href="{% url 'logout' %}"><span class="text-gold font-weight-lighte">Log out</span></a>)</h6>
+                    <h6 class="account-text">From your account dashboard you can 
+                        view your <a href="{% url 'orders' %}">recent orders</a>, manage your <a href="{% url 'billing' %}">billing address</a>, 
+                        <a href="{% url 'change_password' %}">change your password </a>and<a href="{% url 'account_details' %}"> account details</a>.
+                    </h6>
+                </div> 
+            </div>
+        </div>
+    </div>
+{% endblock main%}

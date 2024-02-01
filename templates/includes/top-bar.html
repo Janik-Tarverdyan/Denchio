@@ -1,0 +1,113 @@
+{% load static %}
+{% load i18n %}
+<section class="top-bar pt-3 d-flex justify-content-between align-items-center container-paddings">
+    <div class="navbar-brand">
+        <a href="{% url 'index' %}"><img src="{% static  'images/Denchcoin-logo.png' %}" class="brand" alt="logo"></a>
+    </div>
+    <div class="menu-items">
+        <ul class="d-flex nav-items p-0 mb-0">
+            <li><a href="#home">{% trans 'Home' %}</a></li>
+            <li><a href="{% url 'whitepaper' %}">{% trans 'Whitepaper' %}</a></li>
+            <li><a href="#About">{% trans 'About' %}</a></li>
+            <li><a href="#Wallet">{% trans 'Wallet' %}</a></li>
+            <li><a href="#Roadmap">{% trans 'Roadmap' %}</a></li>
+            <li><a href="#Contacts">{% trans 'Contacts' %}</a></li>
+            <li><a href="{% url 'partners' %}">{% trans 'Partners' %}</a></li>  
+            <li>
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'dashboard' %}">
+                        <div class="login-btn">
+                            {% trans 'My Account' %}
+                        </div>
+                    </a>
+                    
+                    {% else %}
+                    <a href="{% url 'login' %}">
+                        <div class="login-btn">
+                            {% trans 'Login' %}
+                        </div>
+                    </a>
+                    {% endif %}
+                </li>
+            </li>
+            {% comment %} <li class="p-0">
+                <a href="https://twitter.com/denchcoin" target="_black"><img src="{% static 'images/twitter_(1).png' %}" alt=""></a>
+                <a href="https://www.instagram.com/dench.coin" target="_black"><img src="{% static 'images/instagram_(1).png' %}" alt=""></a>
+                <a href="https://www.facebook.com/DENCHCOIN" target="_black"><img src="{% static 'images/facebook_(1).png' %}" alt=""></a>
+            </li> {% endcomment %}
+            {% comment %} <form class="mt-3" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <select onchange="this.form.submit()" name="language">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+            </form> {% endcomment %}
+{#            <li class="d-flex align-items-center">#}
+{#                <form action="{% url 'set_language' %}" method="post" class="d-flex mr-1">#}
+{#                    {% csrf_token %}#}
+{#                    <input name="language" type="hidden" value="en" />#}
+{#                    <input type="image" class="language" src="{% static 'images/us.png' %}"/>#}
+{#                </form>#}
+{#                <form action="{% url 'set_language' %}" method="post" class="d-flex">#}
+{#                    {% csrf_token %}#}
+{#                    <input name="language" type="hidden" value="ru" />#}
+{#                    <input type="image" class="language" src="{% static 'images/ru.png' %}"/>#}
+{#                </form>#}
+{#            </li>#}
+        </ul>
+    </div>
+    <div class="mobile-bars">
+        <i class="fas fa-bars"></i>
+    </div>
+</section>
+<hr class="top-bar-line m-0 py-1" />
+<div class="mobile-menu" style="left: -100%;">
+    <ul class="d-flex nav-items p-0">
+        <li><a href="#home">{% trans 'Home' %}</a></li>
+        <li><a href="{% url 'whitepaper' %}" >{% trans 'Whitepaper' %}</a></li>
+        <li><a href="#Wallet">{% trans 'Wallet' %}</a></li>
+        <li><a href="#Roadmap">{% trans 'Roadmap' %}</a></li>
+        <li><a href="#Contacts">{% trans 'Contacts' %}</a></li>
+        <li><a href="{% url 'partners' %}">{% trans 'Partners' %}</a></li>  
+        <li>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'dashboard' %}">
+                <div class="login-btn">
+                    {% trans 'My Account' %}
+                </div>
+            </a>
+            
+            {% else %}
+            <a href="{% url 'login' %}">
+                <div class="login-btn">
+                    {% trans 'Login' %}
+                </div>
+            </a>
+            {% endif %}
+        </li>
+        <li>
+            <a href="https://twitter.com/denchcoin" target="_black"><img src="{% static 'images/twitter_(1).png' %}" alt=""></a>
+            <a href="https://www.instagram.com/dench.coin" target="_black"><img src="{% static 'images/instagram_(1).png' %}" alt=""></a>
+            <a href="https://www.facebook.com/DENCHCOIN" target="_black"><img src="{% static 'images/facebook_(1).png' %}" alt=""></a>
+            <a href="https://www.linkedin.com/in/denis-asteyan-a6289b113" target="_black"><img src="{% static 'images/linkedin_(1).png' %}" alt=""></a>
+        </li>
+{#        <li class="d-flex align-items-center">#}
+{#            <form action="{% url 'set_language' %}" method="post" class="d-flex mr-3">#}
+{#                {% csrf_token %}#}
+{#                <input name="language" type="hidden" value="en" />#}
+{#                <input type="image" class="language" src="{% static 'images/us.png' %}"/>#}
+{#            </form>#}
+{#            <form action="{% url 'set_language' %}" method="post" class="d-flex">#}
+{#                {% csrf_token %}#}
+{#                <input name="language" type="hidden" value="ru" />#}
+{#                <input type="image" class="language" src="{% static 'images/ru.png' %}"/>#}
+{#            </form>#}
+{#        </li>#}
+    </ul>
+</div>
