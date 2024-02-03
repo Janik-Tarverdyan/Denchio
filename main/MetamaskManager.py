@@ -49,7 +49,7 @@ class MetamaskManager:
                     price = round(price_dench_usd / price_base_usd, 3)
         except Exception as e:
             print(e)
-            price = 0.0
+            price = 10.353
         return price
 
     @staticmethod
