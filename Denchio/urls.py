@@ -20,12 +20,14 @@ from django.conf import settings as config
 from main.views import index
 from django.conf.urls.i18n import i18n_patterns
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('i18n/',include('django.conf.urls.i18n')),
+    path('i18n/', include('django.conf.urls.i18n')),
     path('', include('main.urls')),
 ]
+
+urlpatterns += static(config.STATIC_URL, document_root=config.STATIC_ROOT)
+urlpatterns += static(config.MEDIA_URL, document_root=config.MEDIA_ROOT)
 
 # urlpatterns += i18n_patterns(
 #     path('',include('main.urls')),
