@@ -38,6 +38,7 @@ def _get_price_usd(coin):
 
 
 def index(request):
+    # args = {'price': _get_price()}
     args = {'price': 10.353}
     return render(request, 'index.html', args)
 

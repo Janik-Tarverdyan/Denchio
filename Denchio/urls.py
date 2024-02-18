@@ -27,12 +27,12 @@ urlpatterns = [
     path('', include('main.urls')),
 ]
 
-urlpatterns += static(config.STATIC_URL, document_root=config.STATIC_ROOT)
-urlpatterns += static(config.MEDIA_URL, document_root=config.MEDIA_ROOT)
-
 # urlpatterns += i18n_patterns(
 #     path('',include('main.urls')),
 #     prefix_default_language=True
 # )
 
 handler404 = 'main.views.handler404'
+
+# if config.DEBUG:
+#     urlpatterns += static(config.STATIC_URL, document_root=config.STATIC_ROOT) + static(config.MEDIA_URL, document_root=config.MEDIA_ROOT)

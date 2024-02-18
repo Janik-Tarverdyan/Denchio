@@ -102,17 +102,19 @@
 			<section>
 				<p class="text-gold fs-20 font-weight-bold wow zoomIn t-shadow">{% trans 'Want to Invest? You are in right place' %}</p>
 				<h1 class="text-dench mt-3 fs-48 wow zoomIn t-shadow">DENCHCOIN</h1>
-			
-				<div style="margin-top: 20px;">
-					<a href="https://www.geckoterminal.com/eth/pools/0x5fcc2a76f48852af18ad1365246c00a991215710"><img src="/static/images/geckoterminal_icon.5392b87808e8.png" alt="" style="height: 30px;margin-left: 160px;"></a>
-				</div>
 				<h6 class="mt-4 text-md-muted text-white t-shadow">{% trans 'Dench created to help Business partners in their future Investment' %}</h6>
+
+				<div style="margin-top: 20px;">
+					<a href="https://www.forbes.com/digital-assets/assets/denchcoin-dench/?sh=30d5f99977a9"><img src="{% static 'images/forbes-logo.png' %}" alt="" style="height: 30px;margin-left: 10px;"></a>
+					<a href="https://www.geckoterminal.com/eth/pools/0x5fcc2a76f48852af18ad1365246c00a991215710"><img src="{% static 'images/geckoterminal_icon.png' %}" alt="" style="height: 30px;margin-left: 20px;"></a>
+				</div>
+
 				<br>
 				<!-- <div id="flipdown" class="flipdown"></div> -->
 				<div class="denchcoin-price t-shadow">{% trans 'DENCHCOIN Price:' %}
 					<span
 						class="price"
-					>{{ price }}</span>$
+					>{{ price }} </span>$
 				</div>
 
 				<div class="col-md-6 charts-wrapper">
@@ -136,7 +138,7 @@
 				</div>
 				<div class="buy-btn">
 					<a
-						href="https://pancakeswap.finance/swap?chain=eth&inputCurrency=0x4b7265D153886a7Dc717e815862AcDE6FF7B5bc8&outputCurrency=0xdAC17F958D2ee523a2206206994597C13D831ec7"
+						href="https://pancakeswap.finance/info/pool/0x198fcbb81f23528821589c5529428658266b136c"
 						target="blank_" style="color: #212529"
 					>{% trans 'buy dench' %}</a>
 				</div>
@@ -530,9 +532,9 @@
 
 				</div>
 				<!-- <h6 class="mt-4">IOE Stage1 Ends in:</h6> -->
-					<div class="denchcoin-price-2">DENCHCOIN Price:
-						<span class="price">{{ price }} </span>$
-					</div>
+				<div class="denchcoin-price-2">DENCHCOIN Price:
+					<span class="price">{{ price }} </span>$
+				</div>
 				<h6 class="mt-4 text-gold">PAYMENT METHODS</h6>
 				<div class="payment-sistem d-flex mt-3 pb-3">
 					<i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i>

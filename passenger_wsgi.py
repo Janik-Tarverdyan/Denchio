@@ -1,12 +1,10 @@
-import sys
+import imp
 import os
+import sys
 
-# Set the path to your Django project and activate the virtual environment
-sys.path.append('./')
-os.environ['DJANGO_SETTINGS_MODULE'] = 'Denchio.settings'
 
-# Create the application object
-from django.core.wsgi import get_wsgi_application
+sys.path.insert(0, os.path.dirname(__file__))
 
-application = get_wsgi_application()
-
+wsgi = imp.load_source('wsgi', './Denchio/wsgi.py')
+# wsgi = imp.load_source('wsgi', '/home/dencsfav/denchio/Denchio/wsgi.py')
+application = wsgi.application
