@@ -5,6 +5,7 @@ from django.utils.encoding import force_bytes, force_text
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.conf import settings as django_settings
+from django.conf import settings
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import authenticate
@@ -27,7 +28,7 @@ from .CoinInfoCollector import CoinInfoCollector
 from .MetamaskManager import MetamaskManager
 
 
-# from .RedisControl import RedisControl
+from .RedisControl import RedisControl
 
 def _get_price(to_coin="USD"):
     return MetamaskManager.get_price(to_coin)
@@ -160,7 +161,7 @@ class ChartData(APIView):
         labels = []
         chartdata = []
         post_data = request.data
-        # control = RedisControl(host="localhost", sql_db=settings.DATABASES['default']['NAME'])
+        control = RedisControl(host="localhost", sql_db=settings.DATABASES['default']['NAME'])
         coin_control = CoinInfoCollector("dench-denchcoin", django_settings.DATABASES['default']['NAME'])
         info_for_chart = coin_control.get_candle(post_data["type"])
         for info in info_for_chart:
