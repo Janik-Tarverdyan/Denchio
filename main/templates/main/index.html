@@ -1,0 +1,897 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block afternav %}
+
+<div class="section-paddings mt-5 position-relative">
+    <section>
+        <p class="text-gold fs-20 font-weight-bold wow zoomIn t-shadow">Want to Invest? You are in right place</p>
+        <h1 class="text-dench mt-3 fs-48 wow zoomIn t-shadow">DENCHCOIN</h1>
+        <h6 class="mt-4 text-md-muted text-white t-shadow">Dench created to help Business partners in their future Investment</h6>
+
+        <div style="margin-top: 20px;">
+            <a href="https://www.forbes.com/digital-assets/assets/denchcoin-dench/?sh=30d5f99977a9"><img src="{% static '/images/forbes-logo.png' %}" alt="" style="height: 30px;margin-left: 10px;"></a>
+            <a href="https://www.geckoterminal.com/polygon_pos/pools/0x45f5dff596a3cccba2b3b84d2e435b139ecfbf07"><img src="{% static '/images/geckoterminal_icon.png' %}" alt="" style="height: 30px;margin-left: 20px;"></a>
+        </div>
+
+        <br>
+        <!-- <div id="flipdown" class="flipdown"></div> -->
+        <div class="denchcoin-price t-shadow">DENCHCOIN Price:
+            <span
+                class="price"
+            > </span>$
+        </div>
+
+        <div class="col-md-6 charts-wrapper">
+            <select name="chart" id="charts">
+                <option value="1m">1m</option>
+                <option value="5m">5m</option>
+                <option value="15m" selected>15m</option>
+                <option value="1h">1h</option>
+                <option value="4h">4h</option>
+                <option value="12h">12h</option>
+                <option value="1d">1d</option>
+            </select>
+            <canvas id="Chatline"></canvas>
+        </div>
+
+
+        <div class="chart">
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+            <script src="/static/js/chart.js"></script>
+            
+        </div>
+        <div class="buy-btn">
+            <a
+                href="https://app.uniswap.org/swap?chain=polygon&inputCurrency=0x2dec733c58388516a1C0E97BBb373dbE906D2797&outputCurrency=0xc2132d05d31c914a87c6611c10748aeb04b58e8f"
+                target="blank_" style="color: #212529"
+            >buy dench</a>
+        </div>
+        
+        <div class="payment-sistem d-flex mt-5 pb-3">
+            <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-btc"></i> <i class="fab fa-paypal"></i>
+        </div>
+    </section>
+</div>
+{% endblock afternav %}
+
+{% block main %}
+
+<section class="wallet-section wow fadeIn" id="Wallet">
+    <div class="row">
+        <div class="col-md-4 col-12 position-relative d-flex justify-content-center align-items-center">
+            <img src="/static/images/wallet%20(3).png" id="wallet" alt="wallet">
+            <div class="section1-text">
+                <p class="text-gold font-weight-bold">WALLET For DENCH</p>
+                <h6>You can Send/Receive DENCH using<br/><br/><span class="mt-3">the follwing wallets.</span>
+                </h6>
+            </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="my-5">
+                <div class="wallet-card">
+                    <img src="/static/images/img1.png" class="wallet-img" alt="wallet">
+                    <div class="img-container">
+                        <img class="wow fadeInDown mt-3" src="/static/images/OKX.png" alt="wallet">
+                    </div>
+                    <div class="text-center w-md-50 w-75" style="z-index: 999;">
+                        <h6 class="mt-4">OKX</h6>
+                        <p class="mb-0">Discover, store, invest, send & receive. All in one app.</p>
+                    </div>
+                    <div class="d-flex mobile justify-content-center mb-4">
+                        <a
+                            href="https://apps.apple.com/us/app/okx-buy-bitcoin-btc-crypto/id1327268470"
+                            target="_black"
+                        ><img src="/static/images/Dench-Apple.png" alt="Apple"></a>
+                        <a
+                            href="https://play.google.com/store/apps/details?id=com.okinc.okex.gp"
+                            target="_black"
+                        ><img src="/static/images/Dench-Google-Play.png" alt="Android"></a>
+                        <a
+                            href="https://www.okx.com/web3"
+                            target="_black"
+                        ><img src="/static/images/Dench-WebSite-Web3.png" alt="Web"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="my-5">
+                <div class="wallet-card">
+                    <img src="/static/images/img1.png" class="wallet-img">
+                    <div class="img-container">
+                        <img class="wow fadeInDown" src="/static/images/ByBit.png" alt="wallet" class="mt-3">
+                    </div>
+                    <div class="text-center w-md-50 w-75" style="z-index: 999;">
+                        <h6 class="mt-4">ByBit Web-3</h6>
+                        <p class="mb-0">Make Blockchain Happen Everywhere</p>
+                    </div>
+                    <div class="d-flex mobile justify-content-center mb-4">
+                        <a href="https://apps.apple.com/us/app/bybit-buy-trade-crypto/id1488296980" target="_black"><img src="/static/images/Dench-Apple.png" alt="Apple"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.bybit.app" target="_black"><img src="/static/images/Dench-Google-Play.png" alt="Android"></a>
+                        <a href="https://www.bybit.com/web3" target="_black"><img src="/static/images/Dench-WebSite-Web3.png" alt="Web"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-4 col-12">
+            <div class="my-5">
+                <div class="wallet-card">
+                    <img src="/static/images/img1.png" class="wallet-img">
+                    <div class="img-container">
+                        <img class="wow fadeInDown" src="/static/images/DENCH-trustwallet-2.png" alt="wallet" class="mt-3">
+                    </div>
+                    <div class="text-center w-md-50 w-75" style="z-index: 999;">
+                        <h6 class="mt-4">Trust Wallet</h6>
+                        <p class="mb-0">Secure Multi Coin Wallet for Android and iOS.</p>
+                    </div>
+                    <div class="d-flex mobile justify-content-center mb-4">
+                        <a href="https://apps.apple.com/us/app/coins-one-app-for-crypto/id1475233621" target="_black"><img src="/static/images/Dench-Apple.png" alt="apple"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp" target="_black"><img src="/static/images/Dench-Google-Play.png" alt="apple"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="my-5">
+                <div class="wallet-card">
+                    <img src="/static/images/wallet%20(2).png" class="wallet-img">
+                    <div class="img-container">
+                        <img class="wow fadeInDown" src="/static/images/DENCH-MyEtherWallet-1.png"
+                             alt="wallet" class="mt-3">
+                    </div>
+                    <div class="text-center w-md-50 w-75" style="z-index: 999;">
+                        <h6 class="mt-4">MyEtherWallet</h6>
+                        <p class="mb-0">ETH's Original Wallet for Android and iOS.</p>
+                    </div>
+                    <div class="d-flex mobile justify-content-center mb-4">
+                        <a href="https://apps.apple.com/us/app/mewconnect/id1391097156" target="_black"><img src="/static/images/Dench-Apple.png" alt="apple"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.myetherwallet.mewconnect&hl=en" target="_black"><img src="/static/images/Dench-Google-Play.png" alt="apple"></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</section>
+<section class="stats-section" id="Wallet">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 col-12 pl-0 my-5 ml-5 wow fadeInLeft">
+                <img src="/static/images/dench_gif.gif" alt="gif" class="small_size">
+            </div>
+            <div class="col-md-5 col-10 text-light mt-5">
+                <h6 class="mb-3">
+                    <span class="text-gold stat-key">Dench keeps your currency's spending power steady and growing exponentially by partnering with very large companies. Today, some of the top brands purchase manufactured goods and realty with Dench.</span>
+                </h6>
+                <h6 class="mb-3">
+                    <span class="text-gold stat-key">Dench is a professional company and is providing great customer service. Our employees took the ERC 20,BEP 20 and are working hard to ensure the safety of your coin.</span>
+                </h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 col-12 pl-0 my-5 wow fadeInLeft">
+                <img src="/static/images/DENCH-Distribution-chart.png" alt="chart" class="w-100">
+            </div>
+            <div class="col-md-5 col-12 text-light mt-3">
+                <h3 class="text-light my-5">Token Allocation</h3>
+                <h6 class="mb-3"><span class="text-gold stat-key">TOKEN NAME:</span>
+                    <span
+                        class="result"
+                    >DENCHCOIN</span></h6>
+                <h6 class="mb-3">
+                    <span class="text-gold stat-key">TICKERS / SYMBOL:</span>
+                    <span class="result">DENCH</span>
+                </h6>
+                <h6 class="mb-3">
+                    <span class="text-gold stat-key">TOTAL SUPPLY:</span>
+                    <span class="result">100,000,000 Dench</span>
+                </h6>
+                <h6 class="mb-3"><span class="text-gold stat-key">DECIMALS:</span>
+                    <span class="result">18</span>
+                </h6>
+                <!-- <h6 class="mb-3">
+                    <span class="text-gold stat-key">CONTRACT ERC-20:</span> <a
+                    href="https://pancakeswap.finance/swap?chain=eth&inputCurrency=0x4b7265D153886a7Dc717e815862AcDE6FF7B5bc8&outputCurrency=0xdAC17F958D2ee523a2206206994597C13D831ec7"
+                    target="blank_" class="result text-gold" style="word-break: break-word"
+                >0x4b7265D153886a7Dc717e815862AcDE6FF7B5bc8</a>
+                </h6>
+                <h6 class="mb-3">
+                    <span class="text-gold stat-key">CONTRACT BEP-20:</span> <a
+                    href="https://pancakeswap.finance/swap?chain=eth&inputCurrency=0x4b7265D153886a7Dc717e815862AcDE6FF7B5bc8&outputCurrency=0xdAC17F958D2ee523a2206206994597C13D831ec7"
+                    target="blank_" class="result text-gold" style="word-break: break-word"
+                >0x62aa52175ff697989b214b298cef5053b0bfdef6</a>
+                </h6> -->
+                <h6 class="mb-3">
+                    <span class="text-gold stat-key">CONTRACT POLYGON:</span> <a
+                    href="https://app.uniswap.org/swap?chain=polygon&inputCurrency=0x2dec733c58388516a1C0E97BBb373dbE906D2797&outputCurrency=0xc2132d05d31c914a87c6611c10748aeb04b58e8f"
+                    target="blank_" class="result text-gold" style="word-break: break-word"
+                >0x2dec733c58388516a1C0E97BBb373dbE906D2797</a>
+                </h6>
+                <div class="mt-5">
+                    <div class="stat-border">
+                        <div>Public Sale</div>
+                        <div>65%</div>
+                    </div>
+                    <div class="stat-border">
+                        <div>Liquidity reserve</div>
+                        <div>15%</div>
+                    </div>
+                    <div class="stat-border">
+                        <div>Marketing and Branding</div>
+                        <div>7%</div>
+                    </div>
+                    <div class="stat-border">
+                        <div>Development</div>
+                        <div>7%</div>
+                    </div>
+                    <div class="stat-border mb-5">
+                        <div>Community</div>
+                        <div>6%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="sequrity-section py-5 wow fadeIn">
+    <div>
+        <h1 class="text-center text-light mb-5">Security on the platform</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="sequrity-card">
+                    <div class="squrity-card-head">
+                        <i class="fas fa-key"></i>
+                        <h5>Encrypted Keys</h5>
+                    </div>
+                    <p>All private keys for our wallets are encrypted with AES-256 and are stored offline</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mt-sm-0 mt-3">
+                <div class="sequrity-card">
+                    <div class="squrity-card-head">
+                        <i class="fas fa-database"></i>
+                        <h5>Data Transmission</h5>
+                    </div>
+                    <p>All data from website is transmitted using encrypted Transport Layer Security (TLS) connections (i.e., HTTPS</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 ol-md-offset-0 offset-md-0 offset-sm-3 mt-md-0 mt-3">
+                <div class="sequrity-card">
+                    <div class="squrity-card-head">
+                        <i class="fas fa-lock"></i>
+                        <h5>Password Security</h5>
+                    </div>
+                    <p>Passwords in our database are encrypted using Salted SHA-256</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="youtube-content">
+        <iframe
+            class="youtube-content" src="https://www.youtube.com/embed/-hzTIvvPyGk?playlist=-hzTIvvPyGk&autoplay=1&mute=1&loop=1&showinfo=0&controls=0" allow='autoplay'
+            frameborder="0" allowfullscreen
+        ></iframe>
+    </div>
+</section>
+{% if RoadMap %}
+    <section class="roadmap-section pt-5" id="Roadmap">
+        <div class="container-fluid">
+            <div class="text-center">
+                <h2 class="text-light text-center mb-3">DENCH Token Roadmap</h2>
+                <div class="roadmap-line"></div>
+                <h5 class="roadmap-small-text mt-3 mb-5">powered by blockchain and smart contracts</h5>
+            </div>
+            <div class="d-flex flex-wrap mt-5 justify-content-center">
+                {% for item in RoadMap %}
+                    <div class="roadmap-content">
+                        <i class="far fa-check-circle"></i>
+                        <h4>{{ item.year }} Q{{ item.quarter }}</h4>
+                        <p>{{ item.description }}</p>
+                    </div>
+                    {% if not forloop.last %}
+                        <div class="roadmap-content">
+                            <div class="roadmap-item-line"></div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+<section class="subscribe-section wow fadeIn" id="Contacts">
+    <h2 class="text-center text-light py-80">Subscribe to always be up to
+        <br> date in our latest news!</h2>
+    <form action="{% url 'subscribe' %}" method="post" class="d-sm-flex d-block text-center justify-content-center">
+        {% csrf_token %}
+        <input type="email" placeholder="Enter your email..." class="emil-input" name="email" required>
+        <button class="subscribe-btn mt-sm-0 mt-2">Subscribe</button>
+    </form>
+    <h6 class="text-light text-center mt-5">Follow us on</h6>
+    <div class="d-flex justify-content-center">
+
+        <div class="social-media ">
+            <a href="https://twitter.com/denchcoin" target="_black"><i class="fab fa-twitter text-white"></i></a>
+        </div>
+
+        <div class="social-media">
+            <a href="https://www.instagram.com/dench.coin" target="_black"><i
+                class="fab fa-instagram text-white"
+            ></i></a>
+        </div>
+
+        <div class="social-media">
+            <a href="https://www.facebook.com/denchcoin" target="_black"><i
+                class="fab fa-facebook-f text-white"
+            ></i></a>
+        </div>
+
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/denis-asteyan-a6289b113" target="_black"><i
+                class="fab fa-linkedin-in text-white"
+            ></i></a>
+        </div>
+
+    </div>
+    <div class="container mt-5 d-flex flex-md-row flex-column align-items-md-start align-items-center justify-content-center wow fadeInUp">
+        <div class="dench-info mt-3 mb-2 mr-5">
+            <img src="/static/images/logo2-1.png" alt="logo">
+            <h6 style="margin-top: 44px" class="text-light">Dates: </h6>
+            <p>March 1, 2020 - March 31, 2020</p>
+            <h6 class="mt-3 text-light">DENCHCOIN for sale:</h6>
+            <p>5,000,000 out of 100,000,000 (5%)</p>
+            <h6 class="mt-3 text-light">Hard cap: 20 million</h6>
+            <h6 class="mt-3 text-light">Soft cap: 5 million</h6>
+            <h6 class="mt-3 text-light">Exchange rate:</h6>
+            <!-- <p>1 DENCH = 0.26 USD</p> -->
+        </div>
+        <div class="buy-dench mt-3 mb-2">
+            <div class="card-shadow"></div>
+            <div>
+                <!-- <h6 class="mt-2 text-gold">PARTICIPATE IN OUR DENCHCOIN SALE</h6>
+                <h6 class="mt-4">IOE Stage1 Ends in:</h6> -->
+                <form action="" method="post">
+                    <select id="ex_type" name="ex">
+                    </select>
+                    <label for="values2"></label>
+                    <input class="dench1" type="number" min="0" id="values2"
+                        name="result_after_calculation" placeholder="USDT"
+                        oninput="this.value = Math.abs(this.value);"
+                    />
+                    <label for="values1"></label>
+                    <input class="dench0" type="number" min="0" id="values1"
+                        name="denchcoin_count" placeholder="DENCH"
+                        oninput="this.value = Math.abs(this.value);"
+                    />
+                    <select id="chain_type" name="type" data-matic="{{ MATIC }}" style="display: none;">
+                        <option value="MATIC">DENCH</option>
+                        <!-- <option value="BEP">BEP-20</option>
+                        <option value="ERC">ERC-20</option> -->
+                    </select>
+                </form>
+                <a target="_blank" class="buy-btn trade-button disabled" style="display: block;">
+                    <span style="color: #212529">BUY DENCH</span>
+                </a>
+                <script src="/static/js/trade.js"></script>
+
+            </div>
+            <!-- <h6 class="mt-4">IOE Stage1 Ends in:</h6> -->
+            <div class="denchcoin-price-2">DENCHCOIN Price:
+                <span class="price"> </span>$
+            </div>
+            <h6 class="mt-4 text-gold">PAYMENT METHODS</h6>
+            <div class="payment-sistem d-flex mt-3 pb-3">
+                <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-btc"></i> <i class="fab fa-paypal"></i>
+            </div>
+        </div>
+        <div class="check_card">
+            <h3 id="label" style="color: #ffc955">Check active cards</h3>
+            <div id="check_btn" class="check_btn disabled" disabled>
+                <span style="color: #212529">CHECK</span>
+            </div>
+            <div class="for_check">
+                <input id="input_wallet" class="input_for_check" placeholder="Wallet address">
+                <input id="input_passcode" class="input_for_check" placeholder="Passcode">
+            </div>
+            <div class="wrapper_table_check_contract hidden" id="wrapper_table_check_contract_id">
+                <span class="insert_table"></span>
+            </div>
+            <div class="resign_btn hidden">
+                <span style="color: #212529">RESIGN CONTRACT</span>
+            </div>
+        </div>
+    </div>
+    {% if Staking %}
+    <div class="contracts" id="root" data-stacking="{{ Staking }}">
+    </div>
+    {% endif %}
+</section>
+
+<section id="stakingHistoryTable">
+    <div class="stakingHistoryTableHeader">
+        <h3>Contract History</h3>
+        <button class="stakingHistoryTableCloseButton"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="stakingHistoryTableNoData">
+        <img id="dataLoading" src="{% static 'images/loading.gif' %}" alt="Loading...">
+        <b id="dataNotFoundB" class="hidden"><span>No Data Found</span></b>
+    </div>
+    <div class="stakingHistoryTableBody hidden">
+        <table>
+            <thead>
+                <tr>
+                    <th>Base coin</th>
+                    <th>Base coin price</th>
+                    <th>Base amount</th>
+                    <th>Quote coin</th>
+                    <th>Quote coin price</th>
+                    <th>Quote amount</th>
+                    <th>APR</th>
+                    <th>Signed At</th>
+                    <th>Profit</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</section>
+
+<style>
+    #stakingHistoryTable {
+        position: fixed;
+        width: 100%;
+        height: 90vh;
+        bottom: -90vh;
+        background: white;
+        padding: 1rem;
+        transition: all 0.5s;
+    }
+
+    #stakingHistoryTable.active {
+        bottom: 0;
+    }
+
+    .stakingHistoryTableHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    button.stakingHistoryTableCloseButton {
+        border: none;
+        background: transparent;
+        font-size: 2rem;
+        cursor: pointer;
+        color: red;
+    }
+
+    .stakingHistoryTableNoData, .stakingHistoryTableBody {
+        width: 100%;
+        height: 100%;
+    }
+
+    .stakingHistoryTableNoData {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .stakingHistoryTableNoData > img {
+        width: 2rem;
+    }
+
+    .stakingHistoryTableBody > table {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .stakingHistoryTableBody > table th {
+        text-align: center;
+        font-weight: 700;
+    }
+    .stakingHistoryTableBody > table th,
+    .stakingHistoryTableBody > table td {
+        padding: .5rem;
+    }
+
+    .stakingHistoryTableBody > table th,
+    .stakingHistoryTableBody > table td,
+    .stakingHistoryTableBody > table {
+        border: 1px solid;
+    }
+</style>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js" crossorigin></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/styled-components/6.1.11/styled-components.min.js" integrity="sha512-AxZLDwPLeNAvzSJebtMXvhioRAHSRHb2wTYi61YjcQ4yGGxdTlImDEA8RAVGrz6IPvAaH+Z8j9pzxnk2PHpVnw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    const inputWallet = $('#input_wallet')
+    const inputPasscode = $('#input_passcode')
+    const checkBtn = $('#check_btn')
+    const stakingHistoryTable = $('#stakingHistoryTable')
+    const dataLoading = $('#dataLoading')
+    const dataNotFoundB = $('#dataNotFoundB')
+    const stakingHistoryTableBody = $('.stakingHistoryTableBody')
+    const stakingHistoryTableBodyTbody = $('.stakingHistoryTableBody > table tbody')
+    const stakingHistoryTableNoData = $('.stakingHistoryTableNoData')
+    const stakingHistoryTableCloseButton = $('.stakingHistoryTableCloseButton')
+
+    $(document).on('input', '#input_wallet, #input_passcode', (e) => {
+        if (!!inputWallet.val() && !!inputPasscode.val()) {
+            checkBtn.removeClass('disabled')
+            checkBtn.attr('disabled', false)
+        } else {
+            checkBtn.addClass('disabled')    
+            checkBtn.attr('disabled', true)
+        }
+    })
+
+    stakingHistoryTableCloseButton.on('click', (e) => {
+        stakingHistoryTable.removeClass('active')
+    })
+
+    checkBtn.on('click', (e) => {
+        stakingHistoryTable.addClass('active')
+        dataLoading.removeClass('hidden')
+        stakingHistoryTableNoData.removeClass('hidden')
+        dataNotFoundB.addClass('hidden')
+        stakingHistoryTableBody.addClass('hidden')
+        $.ajax({
+            method: "POST",
+            url: '{% url "check_contract" %}',
+            data: {
+                address: inputWallet.val(),
+                passcode: inputPasscode.val(),
+            },
+            success: function (data) {
+                console.log(data)
+                dataLoading.addClass('hidden')
+                stakingHistoryTableBodyTbody.html('')
+                if (data.length) {
+                    stakingHistoryTableBody.removeClass('hidden')
+                    stakingHistoryTableNoData.addClass('hidden')
+                    var stakingHistoryTableBodyTbodyHtml = ''
+                    data.forEach((element) => {
+                        stakingHistoryTableBodyTbodyHtml += `
+                            <tr>
+                                <td><img src="${element.first_coin.image_url}" alt="${element.first_coin.name}" style="width: 2rem; margin-right: .5rem;">${element.first_coin.name}</td>
+                                <td>${element.first_coin.price} USD</td>
+                                <td>${element.amount_base} ${element.first_coin.symbol}</td>
+                                <td><img src="${element.second_coin.image_url}" alt="${element.second_coin.name}" style="width: 2rem; margin-right: .5rem;">${element.second_coin.name}</td>
+                                <td>${element.second_coin.price} USD</td>
+                                <td>${element.amount_quote} ${element.second_coin.symbol}</td>
+                                <td>${element.apr} %</td>
+                                <td>${element.created_at}</td>
+                                <td>${element.profit} ${element.second_coin.symbol}</td>
+                            </tr>
+                        `
+                    });
+                    stakingHistoryTableBodyTbody.html(stakingHistoryTableBodyTbodyHtml)
+                } else {
+                    dataNotFoundB.removeClass('hidden')
+                }
+            },
+            error: function (error_data) {
+                console.log(error_data);
+            }
+        })
+    })
+</script>
+
+
+<script type="text/babel" data-presets="react,stage-3">
+
+    const ContractItem = ({elem}) => {
+        const [contractActivated, setContractActivated] = React.useState(false)
+        const [nowLoading, setNowLoading] = React.useState(false)
+        const [contractReady, setContractReady] = React.useState(false)
+        const [userWallet, setUserWallet] = React.useState("")
+        const [priceing, setPriceing] = React.useState({
+            source: 0,
+            destination: 0,
+            profit: 0,
+        })
+        const countDownDate = 300;
+
+        const [timerData, setTimerData] = React.useState([0, 0])
+
+        const getReturnValues = (countDown) => {
+            const minutes = Math.floor((countDown % (60 * 60)) / (60));
+            const seconds = Math.floor(countDown % 60);
+
+            return [minutes, seconds];
+        };
+
+        const resetCard = () => {
+            setContractActivated(false)
+            setNowLoading(false)
+            setContractReady(false)
+            setUserWallet("")
+            setPriceing({
+            source: 0,
+            destination: 0,
+            profit: 0,
+        })
+        }
+
+        const startCalcTimer = () => {
+            let intervalData = countDownDate
+            setTimerData(getReturnValues(intervalData))
+            const interval = setInterval(() => {
+                intervalData -= 1
+                setTimerData(getReturnValues(intervalData))
+                if (intervalData <= 0) {
+                    clearInterval(interval) 
+                    resetCard()
+                }
+            }, 1000);
+        }
+
+
+        const userWalletChange = (e) => {
+            const value = e.nativeEvent.srcElement.value || ''
+            if (value.length > 42) {
+                e.target.value = value.substring(0, 42)
+            } else {
+                setUserWallet(value)
+            }
+        }
+
+        const calculatePrice = ({target}) => {
+            const source = Number.parseFloat(target.value) || 0
+            const destination = ((source * elem.source.price) / elem.destination.price).toFixed(2)
+            const apr_part = elem.apr / 4
+            const profit = ((destination / 100) * apr_part).toFixed(2)
+            setPriceing({
+                source,
+                destination,
+                profit,
+            })
+        }
+
+        const submitTransaction = () => {
+            setNowLoading(true)
+            fetch(
+                '{% url "complate_transaction" %}',
+                {
+                    method: "POST",
+                    headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({stak: elem.id, priceing, userWallet,})
+                }
+            )
+            .then(response => response)
+            .then((response) => {
+                setNowLoading(false)
+                response.json().then((data) => {
+                    if (response.ok) {
+                        Swal.fire({
+                            title: "Success",
+                            html: `Please keep the passcode for future use. The passcode is: <h1><b><pre>${data.passcode}</pre></b></h1>`,
+                            icon: "success"
+                        });
+                        resetCard()
+                    } else {
+                        Swal.fire({
+                            title: "Error",
+                            text: data.ERROR,
+                            icon: "error"
+                        });
+                    }
+                })
+            })
+            .catch(error => console.error(error));
+
+        }
+        return (
+            <ContractContainer>
+                <ContractPear>
+                    <ContractPearItem><img src={elem.source.image_url} alt={elem.source.name}/><span>{elem.source.symbol}</span></ContractPearItem>
+                    -
+                    <ContractPearItem><img src={elem.destination.image_url} alt={elem.destination.name}/><span>{elem.destination.symbol}</span></ContractPearItem>
+                </ContractPear>
+                {contractActivated ? 
+                    <>
+                        <InfoSection>
+                            <span>Send us</span>
+                            <span>{elem.source.symbol}: <span style={
+                                {color: "#999"}
+                            }>{priceing.source}</span></span>
+                            <span>{elem.destination.symbol}: <span style={
+                                {color: "#999"}
+                            }>{priceing.destination}</span></span>
+                            {!contractReady && <><span>APR: <span style={
+                                {color: "#999"}
+                            }>{elem.apr} %</span></span>
+                            <span>PROFIT: <span style={
+                                {color: "#999"}
+                            }>{priceing.profit} {elem.destination.symbol}</span></span></>}
+                        </InfoSection>
+                        {contractReady ?
+                            <>
+                                <TimerContainer>
+                                    {timerData[0]} : {timerData[1]}
+                                </TimerContainer>
+                                <StakingWalletAddressArea onClick={() => {navigator.clipboard.writeText('{{ STAKING_WALLET }}')}}>{{ STAKING_WALLET }} <i className="far fa-copy"></i></StakingWalletAddressArea>
+                                <CustomInput placeholder="Your address" onChange={userWalletChange}/>
+                                <CustomButton disabled={userWallet.length != 42} onClick={submitTransaction}>Submit</CustomButton>
+                            </> :
+                            <ContractPear style={{
+                                margin: "1rem 0"
+                            }}>
+                                <CustomInput placeholder="0.00" onChange={calculatePrice} type="number"/>
+                                <CustomButton absolute="true" disabled={priceing.source == 0} onClick={() => {setContractReady(true); startCalcTimer()}}>Send</CustomButton>
+                            </ContractPear>}
+                    </> : 
+                    <>
+                        <InfoSection>
+                            <span>APR: {elem.apr}%</span>
+                            <span>REWARD: {elem.destination.symbol}</span>
+                            <span>DURATION: 3 MONTHS</span>
+                        </InfoSection>
+                        <CustomButton onClick={() => setContractActivated(true)} absolute="true">Activate contract</CustomButton>
+                    </>
+                }
+                {nowLoading && <LoadingContainer>
+                    <img src="{% static 'images/loading.gif' %}" alt="Loading..."/>
+                </LoadingContainer>}
+            </ContractContainer>
+        )
+    }
+    const ContractListContainer = () => {
+        const data = [...$('#root').data('stacking')]
+        // console.log(data)
+        return (
+           <>
+           {data.map((elem) => <ContractItem  key={elem.id} elem={elem}/>)}
+           </>
+        );
+    };
+    const root = ReactDOM.createRoot(document.getElementById("root"))
+    root.render(<ContractListContainer />);
+
+    const TimerContainer = window.styled.div`
+        margin-top: 1rem;
+    `
+
+    const LoadingContainer = window.styled.div`
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        background: #cccc;
+        border-radius: .5rem;
+
+        > img {
+            width: 50px;
+            height: 50px;
+        }
+    `
+
+    const StakingWalletAddressArea = window.styled.div`
+        padding: 1.25rem .25rem;
+        border: 1px solid white;
+        border-radius: .5rem;
+        text-align: center;
+        word-break: break-all;
+        margin: 1rem 0;
+        margin-top: 0;
+        position: relative;
+        box-shadow: 0 0 20px rgb(243, 186, 64);
+        cursor: pointer;
+
+        &:active {
+            background: #ffc95599
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        > i {
+            position: absolute;
+            top: .25rem;
+            right: .25rem;
+        }
+    `
+
+    const CustomInput = window.styled.input`
+        background-color: transparent;
+        color: #ffc955;
+        border: 1px solid #ffc955;
+        border-radius: 10px;
+        // width: 50%;
+    `
+
+    const DefaultButton = window.styled.button`
+        background: #f3ba40;
+        text-transform: uppercase;
+        width: fit-content;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color .5s;
+        font-size: 14px;
+    `
+
+    const CustomButton = window.styled(DefaultButton)`
+        padding: 15px 25px;
+        margin: 1rem auto;
+        ${(props) => props.absolute && 'position: absolute; bottom: 0;'}
+    `
+
+    const InfoSection = window.styled.div`
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        color: #ffc955;
+        margin-top: 1rem;
+    `
+
+    const ContractPearItem = window.styled.div`
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+
+        > img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        > span {
+            font-size: 14px;
+        }
+    `
+    const ContractPear = window.styled.div`
+        display: flex;
+        gap: 0.25rem;
+        justify-content: space-between;
+        color: #ffc955;
+    `
+
+    const ContractContainer = window.styled.div`
+        background: #242424;
+        border-radius: 8px;
+        border: 1px solid #ffc955;
+        color: #cccccc;
+        width: 18%;
+        padding: 20px;
+        height: 398.8px;
+        margin-top: 10px;
+        float: left;
+        margin-left: 10px;
+        position: relative;
+    `
+  </script>
+<script>
+    $.ajax({
+        method: "GET",
+        url: '{% url "get_price" %}',
+        success: function (data) {
+            $('span.price').html(data.price)
+        },
+        error: function (error_data) {
+            console.log(error_data);
+        }
+    })
+</script>
+
+{% endblock main %}

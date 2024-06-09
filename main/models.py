@@ -1,64 +1,78 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser, BaseUserManager
-from .choices import (languages, countries)
+from ckeditor.fields import RichTextField
+
+from datetime import date
+import os
 
 
-class UserManager(BaseUserManager):
-    """Define a model manager for User model with no username field."""
+class Whitepaper(models.Model):
+    title = models.CharField("Վերնագիր", max_length=250)
+    content = RichTextField("Կոնտենտ")
+    file = models.FileField(
+        "Ֆայլ",
+        upload_to="Whitepaper",
+        blank=True,
+        null=True,
+    )
 
-    use_in_migrations = True
+    def filename(self):
+        return os.path.basename(self.file.name)
 
-    def _create_user(self, email, password, **extra_fields):
-        """Create and save a User with the given email and password."""
-        if not email:
-            raise ValueError('The given email must be set')
-        email = self.normalize_email(email)
-        user = self.model(email=email, **extra_fields)
-        user.set_password(password)
-        user.save(using=self._db)
-        return user
-
-    def create_user(self, email, password=None, **extra_fields):
-        """Create and save a regular User with the given email and password."""
-        extra_fields.setdefault('is_staff', False)
-        extra_fields.setdefault('is_superuser', False)
-        return self._create_user(email, password, **extra_fields)
-
-    def create_superuser(self, email, password, **extra_fields):
-        """Create and save a SuperUser with the given email and password."""
-        extra_fields.setdefault('is_staff', True)
-        extra_fields.setdefault('is_superuser', True)
-
-        if extra_fields.get('is_staff') is not True:
-            raise ValueError('Superuser must have is_staff=True.')
-        if extra_fields.get('is_superuser') is not True:
-            raise ValueError('Superuser must have is_superuser=True.')
-
-        return self._create_user(email, password, **extra_fields)
+    def __str__(self):
+        return self.title
 
 
-class User(AbstractUser):
-    username = None
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
-    email = models.EmailField('email address', unique=True)
-    objects = UserManager()
+class Partner(models.Model):
+    name = models.CharField("Անուն", max_length=250)
+    address = models.CharField("Հասցե", blank=True, null=True, max_length=250)
+    phone = models.CharField("Հեռախոս", blank=True, null=True, max_length=250)
+    website = models.CharField("Կայք", blank=True, null=True, max_length=250)
 
-
-class Billing(models.Model):
-    user = models.ForeignKey('User', related_name='billings', on_delete=models.CASCADE)
-    company = models.CharField('Ընկերություն', max_length=200, blank=True, null=True)
-    country = models.CharField('Երկիր', choices=countries, max_length=200)
-    address1 = models.CharField('Հասցե 1-ին', max_length=200)
-    address2 = models.CharField('Հասցե 2-րդ', max_length=200, blank=True, null=True)
-    city = models.CharField('Քաղաք', max_length=200)
-    county = models.CharField('Մարզ', max_length=200, blank=True, null=True)
-    postcode = models.CharField('Փոստային ինդեքս', max_length=10)
-    phone = models.CharField('Հեռախոսահամար', max_length=16)
-    is_active = models.BooleanField('Ակտի՞վ է', default=False)
-    created_at = models.DateTimeField('Ստեղծվել է', auto_now_add=True)
-    updated_at = models.DateTimeField('Փոփոխվել է', auto_now=True)
+    def __str__(self):
+        return self.name
 
     class Meta:
-        verbose_name = 'Վճարման տվյալ'
-        verbose_name_plural = 'Վճարման տվյալներ'
+        verbose_name = "գործընկեր"
+        verbose_name_plural = "Գործընկերներ"
+
+
+class Subscribe(models.Model):
+    email = models.EmailField("Էլ․ հասցե")
+    is_active = models.BooleanField("Ակտիվ է՝", default=True)
+    date_joined = models.DateTimeField("Միացել է՝", auto_now_add=True)
+
+    def __str__(self):
+        return self.email
+
+    class Meta:
+        verbose_name = "բաժանորդ"
+        verbose_name_plural = "Բաժանորդներ"
+
+
+def year_choices():
+    return [(str(i), i) for i in range(date.today().year, 2017, -1)]
+
+
+QUARTER_CHOICES = (
+    ("1", "Առաջին Եռամսյակ"),
+    ("2", "Երկրորդ Եռամսյակ"),
+    ("3", "Երրերդ Եռամսյակ"),
+    ("4", "Չորորդ Եռամսյակ"),
+)
+
+
+class RoadMap(models.Model):
+    year = models.CharField("Տարի", max_length=5, choices=year_choices)
+    quarter = models.CharField(
+        "Եռամսյակ", max_length=2, choices=QUARTER_CHOICES
+    )
+    description = models.TextField("Նկարագրություն")
+
+    def __str__(self):
+        return f"{self.year} Q{self.quarter} - {self.description}"
+
+    class Meta:
+        verbose_name = "օբյեկտ"
+        verbose_name_plural = "Ճանապարհային քարտեզ"
+        ordering = ("year", "quarter")
+        unique_together = ("year", "quarter")

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Partners
+{% endblock title %}
+
+{% block main %}
+<section class="my-5 text-center my-container">
+    {% for item in Partner %}
+        <div class="mb-4">
+            <h3 class="text-gold">{{ item.name }}</h3>
+            {% if item.address %}
+                <h5 class="text-light">{{ item.address }}</h5>
+            {% endif %}
+            {% if item.phone %}
+                <h5 class="text-light"><a class="text-light" href="tel:{{ item.phone }}">{{ item.phone }}</a></h5>
+            {% endif %}
+            {% if item.website %}
+                <h5 class="text-light"><a class="text-light" target="_blank" href="{{ item.website }}">{{ item.website }}</a></h5>
+            {% endif %}
+        </div>
+    {% endfor %}
+</section>
+{% endblock main %}

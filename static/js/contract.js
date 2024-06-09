@@ -210,7 +210,6 @@ function makeTable(header, array) {
     }
     return table;
 }
-
 function copyToClipboard(text) {
     let sampleTextarea = document.createElement("textarea");
     document.body.appendChild(sampleTextarea);
@@ -332,7 +331,7 @@ $.fn.contracts = function (options) {
                     srcCountInput.val(a)
                     dstCountInput.addClass("loading");
                     $.ajax({
-                        method: "POST",
+                        method: "GET",
                         url: endpoint,
                         data: {'amount': a, 'from': option.source, 'to': option.destination},
                         success: function (data) {

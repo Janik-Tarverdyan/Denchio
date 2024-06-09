@@ -1,7 +1,7 @@
 let endpoint = '/api/chart';
 
 $.ajax({
-    method: "POST",
+    method: "GET",
     url: endpoint,
     data: {"type": document.getElementById("charts").value},
     success: function (data) {
@@ -75,7 +75,7 @@ function drawLineGraph(data, id) {
 $("#charts").change(function () {
     let endpoint = '/api/chart';
     $.ajax({
-        method: "POST",
+        method: "GET",
         url: endpoint,
         data: {"type": document.getElementById("charts").value},
         success: function (data) {
