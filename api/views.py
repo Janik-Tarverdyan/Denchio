@@ -68,7 +68,7 @@ def complate_transaction(request):
     amount_range = (amount * 0.99, amount * 1.01)
     second_amount = float(data.get("priceing", {}).get("destination", 0))
     second_amount_range = (second_amount * 0.99, second_amount * 1.01)
-    with PolygonScan("6DCZN7VF1WJRIMJRHPSKV7Z5TF6X4KESTH", False) as matic:
+    with PolygonScan(settings.POLYGONSCAN_API_TOKEN, False) as matic:
         first_coin_tx_data = matic.get_erc20_token_transfer_events_by_contract_address_paginated(
             first_coin,
             1,
