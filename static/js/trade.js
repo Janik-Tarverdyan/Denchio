@@ -52,10 +52,10 @@ value1.on('keydown', function (e) {
 });
 
 function doneTyping1() {
-    canDoInput = false
     const value = value1.val()
     const endpoint = '/api/calculate_coin_amount';
     if (!!value) {
+        canDoInput = false
         buyDenchDiv.css('opacity', 0.8)
         buyDenchDiv.css('pointer-events', 'none')
         $.ajax({
@@ -101,10 +101,10 @@ value2.on('keydown', function (e) {
 });
 
 function doneTyping2() {
-    canDoInput = false
     const value = value2.val()
     const endpoint = '/api/calculate_coin_amount';
     if (!!value) {
+        canDoInput = false
         buyDenchDiv.css('opacity', 0.8)
         buyDenchDiv.css('pointer-events', 'none')
         $.ajax({
